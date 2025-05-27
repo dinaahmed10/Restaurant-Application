@@ -1,9 +1,9 @@
-package com.spring.restuarant.Service.ServiceImpl;
+package com.spring.restaurant.Service.ServiceImpl;
 
 
-import com.spring.restuarant.Repository.UserRepository;
-import com.spring.restuarant.Service.UserService;
-import com.spring.restuarant.entity.User;
+import com.spring.restaurant.Repository.UserRepository;
+import com.spring.restaurant.Service.UserService;
+import com.spring.restaurant.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

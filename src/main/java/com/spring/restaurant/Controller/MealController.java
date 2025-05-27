@@ -1,7 +1,7 @@
-package com.spring.restuarant.Controller;
+package com.spring.restaurant.Controller;
 
-import com.spring.restuarant.Service.MealService;
-import com.spring.restuarant.entity.Meal;
+import com.spring.restaurant.Service.MealService;
+import com.spring.restaurant.entity.Meal;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

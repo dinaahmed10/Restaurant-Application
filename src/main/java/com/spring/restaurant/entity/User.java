@@ -1,4 +1,4 @@
-package com.spring.restuarant.entity;
+package com.spring.restaurant.entity;
 
 
 import jakarta.persistence.*;

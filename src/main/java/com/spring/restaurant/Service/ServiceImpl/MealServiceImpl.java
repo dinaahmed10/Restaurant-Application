@@ -1,9 +1,9 @@
-package com.spring.restuarant.Service.ServiceImpl;
+package com.spring.restaurant.Service.ServiceImpl;
 
 
-import com.spring.restuarant.Repository.MealRepository;
-import com.spring.restuarant.Service.MealService;
-import com.spring.restuarant.entity.Meal;
+import com.spring.restaurant.Repository.MealRepository;
+import com.spring.restaurant.Service.MealService;
+import com.spring.restaurant.entity.Meal;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

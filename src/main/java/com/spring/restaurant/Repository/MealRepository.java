@@ -1,6 +1,6 @@
-package com.spring.restuarant.Repository;
+package com.spring.restaurant.Repository;
 
-import com.spring.restuarant.entity.Meal;
+import com.spring.restaurant.entity.Meal;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MealRepository extends JpaRepository<Meal,Long> {
