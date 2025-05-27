@@ -13,13 +13,12 @@ import lombok.Setter;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "hotels")
+@Table(name = "meals")
 public class Meal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id ;
     private String name;
     private String description;
-    private long callCenter;
 
 }

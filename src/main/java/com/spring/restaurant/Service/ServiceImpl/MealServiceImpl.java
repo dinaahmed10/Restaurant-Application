@@ -29,7 +29,6 @@ public class MealServiceImpl implements MealService {
         Meal oldMeal=MealRepository.findById(id).orElseThrow();
         oldMeal.setDescription(meal.getDescription());
         oldMeal.setName(meal.getName());
-        oldMeal.setCallCenter(meal.getCallCenter());
         return MealRepository.save(oldMeal);
     }
 
