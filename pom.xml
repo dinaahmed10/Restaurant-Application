@@ -8,11 +8,11 @@
 		<version>3.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.spring</groupId>
-	<artifactId>restaurant</artifactId>
+	<groupId>com.hotel</groupId>
+	<artifactId>restaurant-application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Restaurant Application</name>
-	<description>Demo project for Spring Boot</description>
+	<name>Hotel App</name>
+	<description>Demo project for Hotel Application</description>
 	<url/>
 	<licenses>
 		<license/>

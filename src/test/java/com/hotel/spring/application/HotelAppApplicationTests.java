@@ -1,10 +1,10 @@
-package com.spring.restaurant;
+package com.hotel.spring.application;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RestaurantApplicationTests {
+class HotelAppApplicationTests {
 
 	@Test
 	void contextLoads() {
