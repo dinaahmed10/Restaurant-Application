@@ -2,7 +2,7 @@ package com.spring.restaurant.Controller;
 
 
 import com.spring.restaurant.Service.UserService;
-import com.spring.restaurant.entity.User;
+import com.spring.restaurant.Entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

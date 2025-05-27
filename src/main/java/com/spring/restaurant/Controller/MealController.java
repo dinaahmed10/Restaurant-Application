@@ -1,13 +1,12 @@
 package com.spring.restaurant.Controller;
 
 import com.spring.restaurant.Service.MealService;
-import com.spring.restaurant.entity.Meal;
+import com.spring.restaurant.DTO.MealDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -18,22 +17,22 @@ public class MealController{
 
 
     @GetMapping("/readListOfMeals")
-    public ResponseEntity<List<Meal>> readListOfMeals(){
+    public ResponseEntity<List<MealDTO>> readListOfMeals(){
         return  ResponseEntity.ok(MealService.getAllMeals());
     }
 
     @GetMapping("/readMealByID/{id}")
-    public ResponseEntity<Meal> getMealById(@PathVariable Long id){
+    public ResponseEntity<MealDTO> getMealById(@PathVariable Long id){
         return ResponseEntity.ok(MealService.readMealByID(id));
     }
 
     @PostMapping("/createMeal")
-    public ResponseEntity<Meal> creteMeal(@RequestBody Meal Meal){
-        return new ResponseEntity<>(MealService.createMeal(Meal), HttpStatus.CREATED);
+    public ResponseEntity<MealDTO> creteMeal(@RequestBody MealDTO MealDTO){
+        return new ResponseEntity<>(MealService.createMeal(MealDTO), HttpStatus.CREATED);
     }
     @PutMapping("/updateMeal/{id}")
-    public ResponseEntity<Meal>  updateMeal(@PathVariable Long id, @RequestBody Meal Meal){
-        return  ResponseEntity.ok(MealService.updateMeal(id,Meal));
+    public ResponseEntity<MealDTO>  updateMeal(@PathVariable Long id, @RequestBody MealDTO MealDTO){
+        return  ResponseEntity.ok(MealService.updateMeal(id,MealDTO));
     }
 
     @DeleteMapping("/deleteMeal/{id}")

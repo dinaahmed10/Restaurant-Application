@@ -1,16 +1,16 @@
 package com.spring.restaurant.Service;
 
 
-import com.spring.restaurant.entity.Meal;
+import com.spring.restaurant.DTO.MealDTO;
 
 import java.util.List;
 
 public interface MealService {
 
-    Meal createMeal(Meal meal);
-    Meal readMealByID(Long id);
-    Meal updateMeal(Long id, Meal meal);
-    List<Meal> getAllMeals();
+    MealDTO createMeal(MealDTO MealDTO);
+    MealDTO readMealByID(Long id);
+    MealDTO updateMeal(Long id, MealDTO MealDTO);
+    List<MealDTO> getAllMeals();
     void deleteMeal(Long id);
 
 }

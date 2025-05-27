@@ -1,12 +1,15 @@
 package com.spring.restaurant.Service.ServiceImpl;
 
 
+import com.spring.restaurant.Entity.Meal;
+import com.spring.restaurant.Mapper.MealMapper;
 import com.spring.restaurant.Repository.MealRepository;
 import com.spring.restaurant.Service.MealService;
-import com.spring.restaurant.entity.Meal;
+import com.spring.restaurant.DTO.MealDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -15,26 +18,40 @@ import java.util.List;
 public class MealServiceImpl implements MealService {
      private MealRepository MealRepository;
     @Override
-    public Meal createMeal(Meal Meal) {
-        return MealRepository.save(Meal);
+    public MealDTO createMeal(MealDTO MealDTO) {
+        Meal meal= new Meal();
+        meal.setName(MealDTO.getName());
+        meal.setDescription(MealDTO.getDescription());
+        Meal savedMeal=MealRepository.save(meal);
+
+
+        return MealMapper.mapToMealDto(savedMeal);
     }
 
     @Override
-    public Meal readMealByID(Long id) {
-        return MealRepository.findById(id).get();
+    public MealDTO readMealByID(Long id) {
+        Meal meal=MealRepository.findById(id).get();
+        return MealMapper.mapToMealDto(meal) ;
+
     }
 
     @Override
-    public Meal updateMeal(Long id, Meal meal) {
+    public MealDTO updateMeal(Long id, MealDTO MealDTO) {
         Meal oldMeal=MealRepository.findById(id).orElseThrow();
-        oldMeal.setDescription(meal.getDescription());
-        oldMeal.setName(meal.getName());
-        return MealRepository.save(oldMeal);
+        oldMeal.setDescription(MealDTO.getDescription());
+        oldMeal.setName(MealDTO.getName());
+        MealRepository.save(oldMeal);
+        return MealDTO;
     }
 
     @Override
-    public List<Meal> getAllMeals() {
-        return MealRepository.findAll();
+    public List<MealDTO> getAllMeals() {
+        List<MealDTO> MealDTOs = new ArrayList<>();
+        for(int i=0;i < MealRepository.findAll().size();i++){
+            MealDTO MealDTO =MealMapper.mapToMealDto(MealRepository.findAll().get(i));
+            MealDTOs.add(MealDTO);
+        }
+        return MealDTOs ;
     }
 
     @Override

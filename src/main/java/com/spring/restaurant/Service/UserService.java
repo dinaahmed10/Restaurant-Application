@@ -1,7 +1,7 @@
 package com.spring.restaurant.Service;
 
 
-import com.spring.restaurant.entity.User;
+import com.spring.restaurant.Entity.User;
 
 public interface UserService {
 
