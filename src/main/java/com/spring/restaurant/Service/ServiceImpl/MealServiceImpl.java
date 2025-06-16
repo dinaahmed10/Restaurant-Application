@@ -6,6 +6,7 @@ import com.spring.restaurant.Mapper.MealMapper;
 import com.spring.restaurant.Repository.MealRepository;
 import com.spring.restaurant.Service.MealService;
 import com.spring.restaurant.DTO.MealDTO;
+import com.spring.restaurant.execption.ResourceNotFoundException;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -49,7 +50,7 @@ public class MealServiceImpl implements MealService {
 
     @Override
     public MealDTO readMealByID(Long id) {
-        Meal meal=MealRepository.findById(id).get();
+        Meal meal=MealRepository.findById(id).orElseThrow(() ->new ResourceNotFoundException("User","ID",id));
       //  return MealMapper.mapToMealDto(meal) ;
         return ModelMapper.map(meal,MealDTO.class);
     }
@@ -73,7 +74,7 @@ public class MealServiceImpl implements MealService {
 //        return MealMapper.mapToMealDto(savedMeal);
 
 
-        Meal existingMeal=MealRepository.findById(id).orElseThrow();
+        Meal existingMeal=MealRepository.findById(id).orElseThrow(() ->new ResourceNotFoundException("User","ID",id));
 
         Meal updatedMeal=ModelMapper.map(MealDTO ,Meal.class);
         updatedMeal.setId(existingMeal.getId());
@@ -95,6 +96,7 @@ public class MealServiceImpl implements MealService {
 
     @Override
     public void deleteMeal(Long id) {
+        MealRepository.findById(id).orElseThrow(() ->new ResourceNotFoundException("User","ID",id));
         MealRepository.deleteById(id);
     }
 }
