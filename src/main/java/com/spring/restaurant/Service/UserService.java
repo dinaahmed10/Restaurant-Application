@@ -1,9 +1,10 @@
 package com.spring.restaurant.Service;
 
 
+import com.spring.restaurant.DTO.UserDTO;
 import com.spring.restaurant.Entity.User;
 
 public interface UserService {
 
-    User createuser(User user);
+    UserDTO createuser(UserDTO user);
 }

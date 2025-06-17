@@ -1,8 +1,10 @@
 package com.spring.restaurant.Controller;
 
 
+import com.spring.restaurant.DTO.UserDTO;
 import com.spring.restaurant.Service.UserService;
 import com.spring.restaurant.Entity.User;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +20,8 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/create")
-    public ResponseEntity<User> createUser(@RequestBody User user){
-       User userSaved= userService.createuser(user);
+    public ResponseEntity<UserDTO> createUser(@Valid @RequestBody UserDTO user){
+        UserDTO userSaved= userService.createuser(user);
         return new ResponseEntity<>(userSaved, HttpStatus.CREATED);
     }
 
